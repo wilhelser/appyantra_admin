@@ -1,5 +1,5 @@
 class ShortText < ActiveRecord::Base
-
+  attr_accessible :name, :value
   after_update :update_setting
 
   def entity_value
