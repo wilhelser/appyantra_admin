@@ -1,5 +1,5 @@
 class AdminSetting < ActiveRecord::Base
-
+  attr_accessible :name, :display_name, :entity_type, :entity_id, :group
   validates :name, uniqueness: { scope: :group }
 
   scope :managed_groups, where("admin_settings.group != 'Mail'").select("distinct admin_settings.group")
